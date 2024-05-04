@@ -3,13 +3,14 @@ const Schema = mongoose.Schema;
 
 const goalSchema = new Schema(
   {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "User",
+    },
     text: {
       type: String,
       required: [true, "please ddd a text value"],
-    },
-    newItem: {
-      type: String,
-      required: [true, "please ddd a new Item value"],
     },
   },
   { timestamps: true }
